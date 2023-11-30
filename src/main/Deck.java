@@ -11,7 +11,7 @@ public class Deck {
         }
     }
     public String getArray() { 
-        return ;
+        return Arrays.toString(cards);;
     }
     public void shuffleDeck() {
         for (int i = cards.length - 1; i > 0; i--) {
