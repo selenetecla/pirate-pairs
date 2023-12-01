@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Random;
 public class Deck {
     final int numOfCards = 55;
     private int[] cards = new int [numOfCards];
@@ -23,8 +22,14 @@ public class Deck {
             cards[index] = temp;
         }
     }
+
     public int drawCard() {
-        int card = cards[starterIndex++];
+        int card = cards[starterIndex];
+        int[] tempArray = new int[cards.length - 1];
+        for(int i = starterIndex +1; i< cards.length; i++) {
+            tempArray[i-1] = cards [i];
+        }
+        cards = tempArray;
         return card;
     }
 
