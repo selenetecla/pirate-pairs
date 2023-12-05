@@ -1,8 +1,9 @@
 import java.util.Arrays;
 public class Deck {
     final int numOfCards = 55;
-    private int[] cards = new int [numOfCards];
+    int[] cards = new int [numOfCards];
     private int starterIndex = 0;
+     int card;
     public Deck() {
         int cardIndex = 0;
         for (int cardNumber = 1; cardNumber <= 10; cardNumber++) {
@@ -24,7 +25,7 @@ public class Deck {
     }
 
     public int drawCard() {
-        int card = cards[starterIndex];
+        card = cards[starterIndex];
         int[] tempArray = new int[cards.length - 1];
         for(int i = starterIndex +1; i< cards.length; i++) {
             tempArray[i-1] = cards [i];
@@ -32,5 +33,7 @@ public class Deck {
         cards = tempArray;
         return card;
     }
-
+    public int drawnCard() {
+        
+    }
 }
