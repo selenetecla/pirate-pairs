@@ -7,6 +7,6 @@ public class PiratePairs {
         System.out.println("SHUFFLED: " + deck.getArray());
         System.out.println("DRAWN FROM PILE: " + deck.drawCard());
         System.out.println("NEW DECK: " + deck.getArray());
-        Player[] player1 = new Player[];
+
     }
 }
