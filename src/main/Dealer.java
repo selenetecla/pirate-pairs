@@ -3,7 +3,7 @@ public class Dealer {
     private Player[] players;
     private final int numOfPlayers = 4;
     private int losingScore;
-    private boolean playingGame;
+    private boolean done;
     private int round;
 
     public Dealer() {
@@ -26,13 +26,14 @@ public class Dealer {
     }
 
     public void gameInPlay() {
+        deck.shuffleDeck();
         System.out.println("Welcome to Pirate Pairs!");
         System.out.println("Losing Score: " + losingScore);
         System.out.println("Discard Pile: " + deck.getDiscardDeck());
-        System.out.println("Choices: Draw Card or Fold.");
+        //System.out.println("Choices: Draw Card or Fold.");
 
 //Without folding. Checks to see if there is a pair and/or if they lost.
-        while(!playingGame) {
+        while(!done) {
             for(int i = 0; i < numOfPlayers; i++) {
                 onceDrawn(players[i]);
                 showPlayersHand();
@@ -45,7 +46,7 @@ public class Dealer {
                 }
                 if(players[i].getScore() > losingScore) {
                     System.out.println("Player " + (i+1) + " has surpassed the losing score. Game over!");
-                    playingGame = true;
+                    done = true;
                     break;
                 }
                 round++;
