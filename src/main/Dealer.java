@@ -42,7 +42,6 @@ public class Dealer {
                     players[i].updateScore(cardPairValue);
                     System.out.println("Player " + (i+1) + " has a pair of " + cardPairValue + "'s.");
                     players[i].removeHandForPair(deck);
-                    // players[i].removeHand();
                     deck.addToDiscardDeck(cardPairValue);
                 }
                 if(players[i].getScore() > losingScore) {
