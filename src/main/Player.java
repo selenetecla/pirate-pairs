@@ -11,6 +11,7 @@ public class Player {
         return Arrays.toString(playerHand);
     }
 
+//this makes a new hand and transfers over the values of the original hand
     public void addToHand(int card) {
         int updatedHand[] = new int [playerHand.length + 1];
         for (int i = 0; i < playerHand.length; i++) {
@@ -24,6 +25,7 @@ public class Player {
         playerHand = new int[0];
     }
     
+//checks to see if there is pair between the player's hand.
     public boolean hasPair() {
         for (int i = 0; i < playerHand.length; i++) {
             for (int x = i + 1; x < playerHand.length; x++) {
@@ -46,10 +48,10 @@ public class Player {
     public int getCard() {
         return playerHand[playerHand.length - 1];
     }
-
+//fold method: doesn't work
     public int fold(Player[] players) {
         int min = 0;
-        for(Player player : players) {
+        for(Player player : players) { // sets it up to look for a min
             int playerCard = player.getCard();
             if (playerCard < min) {
                 min = playerCard;

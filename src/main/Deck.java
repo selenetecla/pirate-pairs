@@ -36,6 +36,7 @@ public class Deck {
         return card;
     }
 
+//this takes in a card and sent over to the discard pile
     public void addToDiscardDeck(int discardedCard) {
         int[] temp = new int [discardDeck.length + 1];
         for(int i = 0; i < discardDeck.length; i++) {
@@ -44,11 +45,14 @@ public class Deck {
         temp[discardDeck.length] = discardedCard;
         discardDeck = temp;
     }
+
+//is supposed to add an entire hand--this would've worked for the fold function
     public void addToDiscardDeck(int[] hand) {
         for(int i = 0; i < hand.length; i++) {
             addToDiscardDeck(hand[i]);
         }
     }
+
     public String getDiscardDeck() { 
         return Arrays.toString(discardDeck);
     }
