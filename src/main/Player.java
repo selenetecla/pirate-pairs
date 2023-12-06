@@ -23,18 +23,6 @@ public class Player {
 
     public void removeHand() {
         playerHand = new int[0];
-        Player.addToDiscardDeck(playerHand);
-        discardDeck.addToDiscardDeck(playerHand);
-
-    }
-
-        public void removeHandForPair(Deck discarDeck) {
-        playerHand = new int[0];
-        Player.addToDiscardDeck(playerHand);
-        discardDeck.addToDiscardDeck(playerHand);
-        if()
-        playerHand = new int[0];
-
     }
     
 //checks to see if there is pair between the player's hand.
@@ -71,5 +59,10 @@ public class Player {
         }
         System.out.println("Minimum value in other's hand: " + min);
         return min;
+    }
+
+    public void removeHandForPair(Deck discardDeck) {
+        discardDeck.addToDiscardDeck(playerHand);
+        playerHand = new int[0];
     }
 }

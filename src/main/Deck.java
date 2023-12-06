@@ -17,7 +17,7 @@ public class Deck {
     public String getArray() { 
         return Arrays.toString(cards);
     }
-    
+
     public void shuffleDeck() {
         for (int i = cards.length - 1; i > 0; i--) {
             int index = (int) (Math.random() *(i));
@@ -57,4 +57,5 @@ public class Deck {
     public String getDiscardDeck() { 
         return Arrays.toString(discardDeck);
     }
+
 }
